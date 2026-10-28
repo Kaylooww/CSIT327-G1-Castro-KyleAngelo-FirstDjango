@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser
 class CustomUser(AbstractUser):
     class Role(models.TextChoices):
         STUDENT = 'STUDENT', 'Student'
+        INSTRUCTOR = 'INSTRUCTOR', 'Instructor'
         ADMIN = 'ADMIN', 'Administrator'
     
     role = models.CharField(
@@ -18,4 +19,3 @@ class CustomUser(AbstractUser):
         blank=True, 
     )
 
-    
