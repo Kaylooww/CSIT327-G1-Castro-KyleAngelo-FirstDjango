@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log in</button>
+    </form>
+    <p>No account? <a href="{% url 'signup' %}">Sign up</a></p>
+{% endblock %}
+
+{% block title %}Campus Connect - Log In{% endblock %}
+
+{% block header %}<h1>Campus Connect</h1>{% endblock %}
+
+{% block footer %}<p>&copy; 2026 Campus Connect. All rights reserved.</p>{% endblock %}

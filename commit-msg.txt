@@ -1,0 +1,6 @@
+Add signup, authentication, and role-based dashboards
+
+Add custom user signup form and route
+Configure Django auth URLs and login/logout redirects
+Add authenticated dashboard with member count and admin panel
+Add shared, signup, login, and dashboard templates
