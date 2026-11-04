@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Welcome, {{ user.first_name|default:user.username }}!</h2>
-<ul>
-    <li>Role: {{ user.get_role_display }}</li>
-    <li>Course: {{ user.course|default:"Not set" }}</li>
-    <li>Members: {{ member_count }}</li>
-    <li>Last Login: {{ user.last_login|date:"M d, Y"}}</li>
-</ul>
-{% if is_admin %}
-    <a href="{% url 'admin_panel' %}">Open Admin Panel</a>
-{% endif %}
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h3">Welcome, {{ user.first_name|default:user.username }}!</h1>
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6"><div class="border rounded p-3 h-100"><span class="text-secondary">Role</span><div>{{ user.get_role_display }}</div></div></div>
+          <div class="col-sm-6"><div class="border rounded p-3 h-100"><span class="text-secondary">Course</span><div>{{ user.course|default:"Not set" }}</div></div></div>
+          <div class="col-sm-6"><div class="border rounded p-3 h-100"><span class="text-secondary">Members</span><div>{{ member_count }}</div></div></div>
+          <div class="col-sm-6"><div class="border rounded p-3 h-100"><span class="text-secondary">Last login</span><div>{{ user.last_login|date:"M d, Y" }}</div></div></div>
+        </div>
+        <div class="mt-4">
+          <a class="btn btn-outline-primary" href="{% url 'profile' %}">Edit profile</a>
+          {% if is_admin %}
+            <a class="btn btn-primary ms-2" href="{% url 'admin_panel' %}">Open admin panel</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
