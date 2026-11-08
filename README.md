@@ -64,18 +64,3 @@ A Django project for **CSIT327** featuring user accounts and a dashboard.
    ```
 
 7. Open **http://127.0.0.1:8000/** in your browser.
-
-## Main Pages
-
-- `/` — Dashboard
-- `/accounts/signup/` — Sign up
-- `/accounts/login/` — Log in
-- `/accounts/profile/` — Update profile
-- `/admin/` — Django admin
-
-## Notes
-
-- Run commands from the folder containing `manage.py`.
-- The project uses SQLite for local development.
-- Keep the `.venv/` directory, `__pycache__/` files, database files, and secrets out of new Git commits using `.gitignore`.
-- For deployments, move the Django `SECRET_KEY` out of `campusconnect/settings.py` into a secure environment variable and disable `DEBUG`.
